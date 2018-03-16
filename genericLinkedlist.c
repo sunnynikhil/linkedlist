@@ -13,9 +13,7 @@ void insert(struct Node** temp, void *num, size_t size)
     cur->data  = malloc(size);
     cur->next = (*temp);
 
-    int i;
-    for (i=0; i<size; i++)
-        *(char *)(cur->data + i) = *(char *)(num + i);
+    memcpy(cur->data,num,size);
 
     (*temp)    = cur;
 }
